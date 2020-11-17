@@ -24,11 +24,6 @@ def get_token():
 	})
 	return r.json()['token']
 
-def captchacsrf():
-    req = requests.Session()
-    xsrf = req.post("https://auth.roblox.com/v1/login",headers={"X-CSRF-TOKEN":""}).headers['x-csrf-token']
-    return xsrf
-
 def recognize(audiofilename):
 	r = sr.Recognizer()
 	with sr.AudioFile(audiofilename + '.wav') as s:
