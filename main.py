@@ -15,12 +15,12 @@ with open('proxies.txt','r+', encoding='utf-8') as f:
 
 
 def get_token():
-	r = requests.post('https://client-api.arkoselabs.com/fc/gt2/public_key/476068BF-9607-4799-B53D-966BE98E2B81', proxies=proxy, data={
-		'bda': '',
-		'public_key': '476068BF-9607-4799-B53D-966BE98E2B81',
-		'site': 'https://www.roblox.com',
-		'userbrowser': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36',
-		'rnd': f'0.{random.choice("12334565789")}'
+	r = requests.post('https://client-api.arkoselabs.com/fc/gt2/public_key/476068BF-9607-4799-B53D-966BE98E2B81', proxies=proxy, data = {
+	'bda': '',
+	'public_key': '476068BF-9607-4799-B53D-966BE98E2B81',
+	'site': 'https://www.roblox.com',
+	'userbrowser': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36',
+	'rnd': f'0.{random.choice("12334565789")}'
 	})
 	return r.json()['token']
 
